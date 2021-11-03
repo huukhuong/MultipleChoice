@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".PlayActivity">
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/ic_back"
+        android:translationZ="1dp" />
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-5dp"
+        android:src="@drawable/bg_header" />
+
+    <TextView
+        android:id="@+id/txtCountDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center"
+        android:text="20:00"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginTop="-100dp"
+        android:gravity="center"
+        android:text="Câu hỏi số: 1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtNum"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginTop="10dp"
+        android:minHeight="@dimen/_60sdp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp">
+
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:gravity="center"
+            android:minHeight="@dimen/_60sdp"
+            android:text="Chọn câu đúng:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/answerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardQuestion"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:minHeight="@dimen/_45sdp"
+                app:cardBackgroundColor="@color/cardAnswer"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:id="@+id/answerA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:minHeight="@dimen/_45sdp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:text="A."
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txvAnsA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="5dp"
+                        android:text="Mĩ kí với Pháp “hiệp định phòng thủ chung Đông Dương” ngày 23/12/1950 nhằm mục đích:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:minHeight="@dimen/_45sdp"
+                app:cardBackgroundColor="@color/cardAnswer"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:id="@+id/answerB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:minHeight="@dimen/_45sdp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:text="B."
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txvAnsB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="5dp"
+                        android:text="Mĩ kí với Pháp “hiệp định phòng thủ chung Đông Dương” ngày 23/12/1950 nhằm mục đích:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:minHeight="@dimen/_45sdp"
+                app:cardBackgroundColor="@color/cardAnswer"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:id="@+id/answerC"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:minHeight="@dimen/_45sdp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:text="C."
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txvAnsC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="5dp"
+                        android:text="Mĩ kí với Pháp “hiệp định phòng thủ chung Đông Dương” ngày 23/12/1950 nhằm mục đích:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:minHeight="@dimen/_45sdp"
+                app:cardBackgroundColor="@color/cardAnswer"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:id="@+id/answerD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:minHeight="@dimen/_45sdp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:text="D."
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txvAnsD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="5dp"
+                        android:text="Mĩ kí với Pháp “hiệp định phòng thủ chung Đông Dương” ngày 23/12/1950 nhằm mục đích:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <android.widget.Button
+        android:id="@+id/btnNext"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:layout_marginBottom="@dimen/_14sdp"
+        android:background="@drawable/btn"
+        android:text="Xác nhận"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
