@@ -67,8 +67,6 @@ public class PlayActivity extends AppCompatActivity {
         answerC = findViewById(R.id.answerC);
         answerD = findViewById(R.id.answerD);
 
-        setQuestion();
-
         SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
         long minutes = 600000;
         timer = new CountDownTimer(minutes, 1000) {
@@ -78,12 +76,15 @@ public class PlayActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-
+                finishGame();
             }
 
         };
         timer.start();
+
+        setQuestion();
     }
+
 
     private void addEvents() {
         btnBack.setOnClickListener(v -> finish());
@@ -94,23 +95,33 @@ public class PlayActivity extends AppCompatActivity {
         answerD.setOnClickListener(v -> setColorAnswer(answerD, "D"));
     }
 
+    private void finishGame() {
+        Intent intent = new Intent(PlayActivity.this, ResultActivity.class);
+        intent.putExtra("correct", correct);
+        startActivity(intent);
+        finish();
+    }
+
     private void setQuestion() {
-        btnNext.setEnabled(false);
-        btnNext.setAlpha(.5f);
+        try {
+            btnNext.setEnabled(false);
+            btnNext.setAlpha(.5f);
 
-        txtNum.setText("Câu hỏi số: " + (num + 1));
-        Question question = PlayGame.questionPlay.get(num);
-        txtQuestion.setText(question.getQuestion());
-        txvAnsA.setText(question.getAnsA());
-        txvAnsB.setText(question.getAnsB());
-        txvAnsC.setText(question.getAnsC());
-        txvAnsD.setText(question.getAnsD());
+            Question question = PlayGame.questionPlay.get(num);
+            txtNum.setText("Câu hỏi số: " + (num + 1));
+            txtQuestion.setText(question.getQuestion());
+            txvAnsA.setText(question.getAnsA());
+            txvAnsB.setText(question.getAnsB());
+            txvAnsC.setText(question.getAnsC());
+            txvAnsD.setText(question.getAnsD());
 
-        setColorAnswer(null, "");
+            setColorAnswer(null, "");
+        } catch (Exception e) {
+            Log.e("ERROR", e.toString());
+        }
     }
 
     private void nextQuestion() {
-        num++;
         Question question = PlayGame.questionPlay.get(num);
         // kiem tra dap an
         if (selectedAnswer.equals(question.getCorrect())) {
@@ -145,22 +156,20 @@ public class PlayActivity extends AppCompatActivity {
                     break;
             }
         }
-        new CountDownTimer(0, 1000) {
+        num++;
+        new CountDownTimer(500, 1000) {
 
             public void onTick(long millisUntilFinished) {
             }
 
             public void onFinish() {
-                setQuestion();
+                if (num < PlayGame.questionPlay.size())
+                    setQuestion();
+                else
+                    finishGame();
             }
 
         }.start();
-        if (num == PlayGame.questionPlay.size()) {
-            Intent intent = new Intent(PlayActivity.this, ResultActivity.class);
-            intent.putExtra("correct", correct);
-            startActivity(intent);
-            finish();
-        }
     }
 
 

@@ -4,20 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
-    private TextView txvResult;
+    private TextView txtCorrect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-//        Intent intent = getIntent();
-//        int correct = intent.getIntExtra("correct", 0);
-//        txvResult = findViewById(R.id.txvCorrect);
-//        txvResult.setText(correct + "/20");
+        txtCorrect = findViewById(R.id.txtCorrect);
+        Intent intent = getIntent();
+        txtCorrect.setText(intent.getIntExtra("correct", 0) + "");
+
     }
 }

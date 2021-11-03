@@ -7,9 +7,9 @@
     tools:context=".ResultActivity">
 
     <TextView
-        android:id="@+id/txvCorrect"
-        android:gravity="center"
+        android:id="@+id/txtCorrect"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:gravity="center" />
 
 </LinearLayout>
