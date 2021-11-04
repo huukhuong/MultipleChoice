@@ -68,6 +68,8 @@ public class AdapterSubject extends RecyclerView.Adapter<AdapterSubject.SubjectV
             }
         }
 
+        Collections.shuffle(PlayGame.questionPlay);
+
         context.startActivity(new Intent(context, PlayActivity.class));
     }
 
