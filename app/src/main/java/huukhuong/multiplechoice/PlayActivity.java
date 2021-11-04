@@ -98,6 +98,7 @@ public class PlayActivity extends AppCompatActivity {
     private void finishGame() {
         Intent intent = new Intent(PlayActivity.this, ResultActivity.class);
         intent.putExtra("correct", correct);
+        intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
         finish();
     }

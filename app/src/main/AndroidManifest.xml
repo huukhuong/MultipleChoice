@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MultipleChoice">
         <activity
-            android:name=".ResultActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".PlayActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ResultActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

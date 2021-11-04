@@ -8,6 +8,8 @@ import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import huukhuong.multiplechoice.util.PlayGame;
 
 public class ResultActivity extends AppCompatActivity {
@@ -28,8 +30,9 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        addControls();
-        addEvents();
+
+//        addControls();
+//        addEvents();
     }
 
     private void addControls() {
@@ -57,6 +60,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        btnHome.setOnClickListener(v -> startActivity(new Intent(ResultActivity.this, MainActivity.class)));
 
     }
 }
