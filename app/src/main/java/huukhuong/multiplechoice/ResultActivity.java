@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,8 +32,8 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
 
-//        addControls();
-//        addEvents();
+        addControls();
+        addEvents();
     }
 
     private void addControls() {
@@ -61,6 +62,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private void addEvents() {
         btnHome.setOnClickListener(v -> startActivity(new Intent(ResultActivity.this, MainActivity.class)));
-
+        btnRanking.setOnClickListener(v -> Toast.makeText(ResultActivity.this, "Chức năng này đang được phát triển", Toast.LENGTH_SHORT).show());
+        btnShowResult.setOnClickListener(v -> Toast.makeText(ResultActivity.this, "Chức năng này tạm khóa", Toast.LENGTH_SHORT).show());
     }
 }
